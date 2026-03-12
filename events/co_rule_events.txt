@@ -15,25 +15,15 @@ character_event = {
             }
 
             spouse = {
-                if = {
-                    limit = {
-                        NOT = { has_character_modifier = co_rule_husband_modifier }
-                    }
-                    add_character_modifier = {
-                        modifier = co_rule_husband_modifier
-                        years = -1
-                    }
+                add_character_modifier = {
+                    modifier = co_rule_husband_modifier
+                    years = -1
                 }
             }
 
-            if = {
-                limit = {
-                    NOT = { has_character_modifier = co_rule_wife_modifier }
-                }
-                add_character_modifier = {
-                    modifier = co_rule_wife_modifier
-                    years = -1
-                }
+            add_character_modifier = {
+                modifier = co_rule_wife_modifier
+                years = -1
             }
 
             if = {
@@ -43,15 +33,5 @@ character_event = {
                 set_designated_regent = spouse
             }
         }
-    }
-}
-
-# Yearly maintenance / old save compatibility
-character_event = {
-    id = co_rule.0002
-    hide_window = yes
-
-    immediate = {
-        trigger_event = { id = co_rule.0001 }
     }
 }

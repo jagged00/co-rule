@@ -34,26 +34,3 @@ on_marriage = {
         }
     }
 }
-
-# Backfill for existing saves: runs yearly and only touches rulers still missing co-rule setup.
-on_yearly_pulse = {
-    effect = {
-        every_living_character = {
-            limit = {
-                is_female = yes
-                is_ruler = yes
-                faith.religion = religion:christianity_religion
-                spouse = {
-                    exists = yes
-                    is_male = yes
-                    is_adult = yes
-                }
-                OR = {
-                    NOT = { has_character_modifier = co_rule_wife_modifier }
-                    NOT = { spouse = { has_character_modifier = co_rule_husband_modifier } }
-                }
-            }
-            trigger_event = { id = co_rule.0002 }
-        }
-    }
-}
