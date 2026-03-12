@@ -1,0 +1,37 @@
+namespace = co_rule
+
+character_event = {
+    id = co_rule.0001
+    hide_window = yes
+
+    immediate = {
+        if = {
+            limit = {
+                spouse = {
+                    exists = yes
+                    is_male = yes
+                    is_adult = yes
+                }
+            }
+
+            spouse = {
+                add_character_modifier = {
+                    modifier = co_rule_husband_modifier
+                    years = -1
+                }
+            }
+
+            add_character_modifier = {
+                modifier = co_rule_wife_modifier
+                years = -1
+            }
+
+            if = {
+                limit = {
+                    can_set_designated_regent_trigger = yes
+                }
+                set_designated_regent = spouse
+            }
+        }
+    }
+}

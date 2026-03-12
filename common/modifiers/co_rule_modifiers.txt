@@ -1,0 +1,11 @@
+co_rule_husband_modifier = {
+    diplomacy = 3
+    stewardship = 3
+    monthly_prestige = 0.25
+    spouse_opinion = 20
+}
+
+co_rule_wife_modifier = {
+    monthly_prestige = 0.15
+    vassal_opinion = 5
+}
