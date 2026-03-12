@@ -1,0 +1,36 @@
+on_marriage = {
+    effect = {
+        if = {
+            limit = {
+                scope:actor = {
+                    is_female = yes
+                    is_ruler = yes
+                    faith.religion = religion:christianity_religion
+                }
+                scope:recipient = {
+                    is_male = yes
+                    is_adult = yes
+                }
+            }
+            scope:actor = {
+                trigger_event = { id = co_rule.0001 }
+            }
+        }
+        if = {
+            limit = {
+                scope:recipient = {
+                    is_female = yes
+                    is_ruler = yes
+                    faith.religion = religion:christianity_religion
+                }
+                scope:actor = {
+                    is_male = yes
+                    is_adult = yes
+                }
+            }
+            scope:recipient = {
+                trigger_event = { id = co_rule.0001 }
+            }
+        }
+    }
+}
